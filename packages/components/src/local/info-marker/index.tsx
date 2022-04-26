@@ -51,7 +51,7 @@ export const InfoMarker: React.FC<PropTypes> = ({
         const svgXml = xmljs.json2xml(svgJson, option)
         setSvgContent(svgXml)
       })
-  }, [marker.icon])
+  }, [marker.icon, marker.color])
 
   const divIcon = L.divIcon({
     iconSize: [40, 40],
