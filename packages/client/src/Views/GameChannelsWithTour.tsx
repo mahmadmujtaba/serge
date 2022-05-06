@@ -10,7 +10,7 @@ import GameChannels from './GameChannels/GameChannels'
 
 type GameTour = {
   selector: string;
-  content: string | (() => JSX.Element);
+  content: string | (() => React.ReactElement);
 }
 
 const useStyles = makeStyles({

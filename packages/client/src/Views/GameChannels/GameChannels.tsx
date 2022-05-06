@@ -5,9 +5,7 @@ import { usePlayerUiState, usePlayerUiDispatch } from '../../Store/PlayerUi'
 import { faBookOpen, faAddressBook } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ForceObjective, TurnProgression } from '@serge/components'
-import classNames from 'classnames'
 import { TabNode } from 'flexlayout-react'
-import React, { useCallback, useState } from 'react'
 import {
   nextGameTurn,
   openModal,
@@ -15,16 +13,14 @@ import {
   showHideObjectives
 } from '../../ActionsAndReducers/playerUi/playerUi_ActionCreators'
 import { expiredStorage } from '../../consts'
-import { usePlayerUiDispatch, usePlayerUiState } from '../../Store/PlayerUi'
 import AdminAndInsightsTabsContainer from '../AdminAndInsightsTabsContainer/AdminAndInsightsTabsContainer'
-import ChannelTabsContainer from '../ChannelTabsContainer/ChannelTabsContainer'
 import PlayerLog from '../PlayerLog'
 
 type GameChannelsProps = {
   onTabChange: (node: TabNode) => void
 }
 
-const GameChannels: React.FC<GameChannelsProps> = ({ onTabChange, }): React.ReactElement => {
+const GameChannels: React.FC<GameChannelsProps> = ({ onTabChange }): React.ReactElement => {
   const {
     currentWargame,
     gameDate,

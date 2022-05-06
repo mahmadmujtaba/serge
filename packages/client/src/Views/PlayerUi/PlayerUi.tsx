@@ -52,7 +52,6 @@ const PlayerUi = ({ gameInfo, wargame, messageTypes, checkPasswordFail, wargameI
       // dispatch wargame and role to version component
       dispatch(addPlayerLog(currentWargame, selectedRole))
     }
-
   }, [selectedForce, selectedRole])
 
   useEffect(() => {
