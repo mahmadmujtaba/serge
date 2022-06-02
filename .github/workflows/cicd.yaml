@@ -1,0 +1,41 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: cicd
+
+on:
+
+  pull_request:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+  
+    name: Build
+    runs-on: self-hosted
+    
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v1
+
+      - name: Use Node.js version ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name : Running dependency installation
+        run: yarn install
+        
+      - name : Running project building
+        run: yarn build
+
+      - name : Run app
+        run: yarn serge
